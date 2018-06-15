@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,48 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3G-Qk-qKU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="lG1-h9-hZz"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dtJ-a3-TMg">
+                                <rect key="frame" x="0.0" y="65" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="wMW-Vn-tLt"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mKW-XB-YHT">
+                                <rect key="frame" x="0.0" y="109" width="375" height="558"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mKW-XB-YHT" secondAttribute="trailing" id="6uI-et-k4u"/>
+                            <constraint firstItem="mKW-XB-YHT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="73I-a4-Rez"/>
+                            <constraint firstItem="w3G-Qk-qKU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gku-Rd-K5p"/>
+                            <constraint firstItem="w3G-Qk-qKU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="JGk-o6-kvs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mKW-XB-YHT" secondAttribute="bottom" id="N50-Yf-aL2"/>
+                            <constraint firstItem="dtJ-a3-TMg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="QED-2u-5rk"/>
+                            <constraint firstItem="dtJ-a3-TMg" firstAttribute="top" secondItem="w3G-Qk-qKU" secondAttribute="bottom" id="Vcb-gQ-99v"/>
+                            <constraint firstItem="w3G-Qk-qKU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cqW-5E-3zb"/>
+                            <constraint firstItem="mKW-XB-YHT" firstAttribute="top" secondItem="dtJ-a3-TMg" secondAttribute="bottom" id="pPK-mx-y59"/>
+                            <constraint firstItem="dtJ-a3-TMg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xVN-b6-C1m"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116" y="117.39130434782609"/>
         </scene>
     </scenes>
 </document>
