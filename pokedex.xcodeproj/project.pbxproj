@@ -66,10 +66,10 @@
 		1803AEFF20D40BA3005017FE /* pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				186958DB20D50B7A00888C7A /* Controller */,
-				1803AF1720D42069005017FE /* View */,
 				1803AF1220D413EE005017FE /* Model */,
-				186958DC20D50BBE00888C7A /* Util */,
+				1803AF1720D42069005017FE /* View */,
+				186958DB20D50B7A00888C7A /* Controller */,
+				186958DC20D50BBE00888C7A /* Utils */,
 				186958DD20D50BD200888C7A /* Resources */,
 				1803AF0020D40BA3005017FE /* AppDelegate.swift */,
 				1803AF0420D40BA3005017FE /* Main.storyboard */,
@@ -104,12 +104,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		186958DC20D50BBE00888C7A /* Util */ = {
+		186958DC20D50BBE00888C7A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				186958D520D4D9BF00888C7A /* csv.swift */,
 			);
-			path = Util;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		186958DD20D50BD200888C7A /* Resources */ = {
