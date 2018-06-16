@@ -26,17 +26,33 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w3G-Qk-qKU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pokedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKH-BU-m19">
-                                        <rect key="frame" x="125" y="22" width="119" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKH-BU-m19">
+                                        <rect key="frame" x="128" y="22" width="119" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Pi9-0Z-1O9"/>
+                                            <constraint firstAttribute="width" constant="119" id="gMx-XH-SIc"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="23"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvA-CP-mPd">
+                                        <rect key="frame" x="325" y="22" width="20" height="35"/>
+                                        <state key="normal" title="Play" image="music.png"/>
+                                        <connections>
+                                            <action selector="music:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8xo-k6-TTA"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="jKH-BU-m19" firstAttribute="centerX" secondItem="w3G-Qk-qKU" secondAttribute="centerX" id="DdK-1o-uyh"/>
+                                    <constraint firstAttribute="bottom" secondItem="jKH-BU-m19" secondAttribute="bottom" constant="8" id="f9d-Jy-eqQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="RvA-CP-mPd" secondAttribute="trailing" constant="15" id="itu-Nn-4v2"/>
+                                    <constraint firstAttribute="bottom" secondItem="RvA-CP-mPd" secondAttribute="bottom" constant="8" id="kNj-Jy-PFT"/>
                                     <constraint firstAttribute="height" constant="65" id="lG1-h9-hZz"/>
+                                    <constraint firstItem="RvA-CP-mPd" firstAttribute="leading" secondItem="jKH-BU-m19" secondAttribute="trailing" constant="78" id="twc-zd-he0"/>
+                                    <constraint firstItem="RvA-CP-mPd" firstAttribute="top" secondItem="w3G-Qk-qKU" secondAttribute="top" constant="22" id="u1p-Au-Kc4"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="dtJ-a3-TMg">
@@ -131,5 +147,6 @@
     <resources>
         <image name="4" width="120" height="120"/>
         <image name="bg" width="1920" height="1200"/>
+        <image name="music.png" width="100" height="100"/>
     </resources>
 </document>

@@ -18,6 +18,8 @@
 		186958D620D4D9BF00888C7A /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186958D520D4D9BF00888C7A /* csv.swift */; };
 		186958D920D50B3200888C7A /* Pokemon Hollow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 186958D720D50B3100888C7A /* Pokemon Hollow.ttf */; };
 		186958DA20D50B3200888C7A /* Pokemon Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 186958D820D50B3200888C7A /* Pokemon Solid.ttf */; };
+		186958DF20D5138600888C7A /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 186958DE20D5138600888C7A /* music.mp3 */; };
+		186958E120D513B000888C7A /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = 186958E020D513B000888C7A /* music.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		186958D520D4D9BF00888C7A /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
 		186958D720D50B3100888C7A /* Pokemon Hollow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon Hollow.ttf"; sourceTree = "<group>"; };
 		186958D820D50B3200888C7A /* Pokemon Solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pokemon Solid.ttf"; sourceTree = "<group>"; };
+		186958DE20D5138600888C7A /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
+		186958E020D513B000888C7A /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 		186958DD20D50BD200888C7A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				186958E020D513B000888C7A /* music.png */,
+				186958DE20D5138600888C7A /* music.mp3 */,
 				1803AF1520D4187B005017FE /* pokemon.csv */,
 				186958D720D50B3100888C7A /* Pokemon Hollow.ttf */,
 				186958D820D50B3200888C7A /* Pokemon Solid.ttf */,
@@ -185,6 +191,8 @@
 				186958D920D50B3200888C7A /* Pokemon Hollow.ttf in Resources */,
 				186958DA20D50B3200888C7A /* Pokemon Solid.ttf in Resources */,
 				1803AF1620D4187B005017FE /* pokemon.csv in Resources */,
+				186958E120D513B000888C7A /* music.png in Resources */,
+				186958DF20D5138600888C7A /* music.mp3 in Resources */,
 				1803AF0620D40BA3005017FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

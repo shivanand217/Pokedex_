@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AVFoundation // music
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collection: UICollectionView!
     
     var pokemon = [Pokemon]()
+    var musicPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,26 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collection.dataSource = self
         collection.delegate = self
         
+        // invoke methods here
         parsePokemonCSV()
+        initAudio()
+        
+    }
+    
+    func initAudio() {
+        let path = Bundle.main.path(forResource: "music", ofType: "mp3")!
+        
+        // can throw error use [do try catch]
+        do {
+            musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path)!)
+            musicPlayer.prepareToPlay()
+            musicPlayer.numberOfLoops = -1
+            musicPlayer.play()
+            
+        } catch let err as NSError {
+            
+            print(err.debugDescription)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,6 +104,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 105, height: 105)
+    }
+    
+    @IBAction func music(_ sender: UIButton) {
+        
     }
     
 }
