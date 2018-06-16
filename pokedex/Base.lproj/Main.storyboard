@@ -35,7 +35,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="mKW-XB-YHT">
                                 <rect key="frame" x="0.0" y="109" width="375" height="558"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RSE-Kt-lkB">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RSE-Kt-lkB" userLabel="collectionCell">
                                 <rect key="frame" x="20" y="129" width="335" height="518"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EP0-pN-cDP">
                                     <size key="itemSize" width="106" height="99"/>
@@ -105,12 +105,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="vd" destination="RSE-Kt-lkB" id="0UF-PJ-j0b"/>
+                        <outlet property="collection" destination="RSE-Kt-lkB" id="lQp-qK-mLM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-513" y="80"/>
+            <point key="canvasLocation" x="-1047" y="74"/>
         </scene>
     </scenes>
     <resources>

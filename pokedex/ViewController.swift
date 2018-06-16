@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var collection: UICollectionViewCell!
+    
+    @IBOutlet weak var collection: UICollectionView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 30;
@@ -18,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: <#T##IndexPath#>) as? PokeCell{
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: <#T##IndexPath#>) as? PokeCell {
             return cell
         } else {
             
@@ -41,6 +42,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     
