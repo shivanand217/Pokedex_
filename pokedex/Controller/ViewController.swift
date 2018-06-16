@@ -13,6 +13,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var collection: UICollectionView!
     
+    @IBOutlet weak var searchBarAction: UISearchBar!
+    
     var pokemon = [Pokemon]()
     var musicPlayer: AVAudioPlayer!
     
@@ -117,5 +119,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
+
 }
 

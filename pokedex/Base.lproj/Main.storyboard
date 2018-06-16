@@ -137,11 +137,12 @@
                     </view>
                     <connections>
                         <outlet property="collection" destination="RSE-Kt-lkB" id="lQp-qK-mLM"/>
+                        <outlet property="searchBarAction" destination="dtJ-a3-TMg" id="cVX-0s-fjN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1636" y="-60.719640179910051"/>
+            <point key="canvasLocation" x="-2186" y="-267"/>
         </scene>
     </scenes>
     <resources>
