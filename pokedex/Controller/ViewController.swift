@@ -12,7 +12,6 @@ import AVFoundation // music
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collection: UICollectionView!
-    
     @IBOutlet weak var searchBarAction: UISearchBar!
     
     var pokemon = [Pokemon]()
