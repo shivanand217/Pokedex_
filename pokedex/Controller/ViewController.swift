@@ -156,6 +156,5 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
             collection.reloadData()
         }
     }
-
 }
 
