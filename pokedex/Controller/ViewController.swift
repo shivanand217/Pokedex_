@@ -26,14 +26,14 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // set Data source and delegates to self
+        // Set Data source and delegates
         collection.dataSource = self
         collection.delegate = self
         searchBarAction.delegate = self
         
         // invoke methods here
         parsePokemonCSV()
-        initAudio()
+        // initAudio()
     }
     
     func initAudio() {
@@ -76,7 +76,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
             }
             
         } catch let err as NSError {
-            
             print(err.debugDescription)
         }
     }
@@ -86,8 +85,17 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
         // deque the cell to make it reusable
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PokeCell", for: indexPath) as? PokeCell {
             
-            let poke = pokemon[indexPath.row]
-            cell.configureCell(pokemon: poke)
+            var poke : Pokemon!
+            
+            if inSearchMode == false {
+                
+                poke = pokemon[indexPath.row]
+                cell.configureCell(pokemon: poke)
+            } else {
+                
+                poke = filteredPokemon[indexPath.row]
+                cell.configureCell(pokemon: poke)
+            }
             
             return cell
         } else {
@@ -102,7 +110,12 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return pokemon.count;
+        
+        if inSearchMode == true {
+            return filteredPokemon.count
+        } else {
+            return pokemon.count;
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -133,12 +146,14 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
             inSearchMode = true
             
             let lower = searchBar.text!.lowercased()
-            
+            // filter all the pokemons based on the search query
             filteredPokemon = pokemon.filter({ $0.name.range(of: lower) != nil })
             for i in filteredPokemon {
                 print(i.name, terminator:" ")
             }
             print()
+            
+            collection.reloadData()
         }
     }
 
