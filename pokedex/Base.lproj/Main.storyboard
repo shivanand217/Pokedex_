@@ -138,11 +138,27 @@
                     <connections>
                         <outlet property="collection" destination="RSE-Kt-lkB" id="lQp-qK-mLM"/>
                         <outlet property="searchBarAction" destination="dtJ-a3-TMg" id="cVX-0s-fjN"/>
+                        <segue destination="tuf-a1-dbC" kind="show" identifier="PokemonDetailVC" id="5gS-nR-bJS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2186" y="-267"/>
+            <point key="canvasLocation" x="-3113" y="-280"/>
+        </scene>
+        <!--Pokemon DetailVC-->
+        <scene sceneID="lcd-rT-vwW">
+            <objects>
+                <viewController id="tuf-a1-dbC" customClass="PokemonDetailVC" customModule="pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cgk-9G-4pe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ZFu-1U-B5i"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xbb-2T-9u7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2314" y="-280"/>
         </scene>
     </scenes>
     <resources>

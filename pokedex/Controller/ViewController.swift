@@ -13,7 +13,6 @@ class ViewController: UIViewController, UICollectionViewDelegate,
 UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     @IBOutlet weak var collection: UICollectionView!
-    
     @IBOutlet weak var searchBarAction: UISearchBar!
     
     var pokemon = [Pokemon]()
@@ -30,6 +29,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
         collection.dataSource = self
         collection.delegate = self
         searchBarAction.delegate = self
+       
         
         // invoke methods here
         parsePokemonCSV()
@@ -105,8 +105,19 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
         }
     }
     
+    // segue should be called when a cell is picked
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        var poke: Pokemon!
+        
+        if inSearchMode {
+            poke = filteredPokemon[indexPath.row]
+        } else {
+            poke = pokemon[indexPath.row]
+        }
+        
+        // send data through the segue
+        performSegue(withIdentifier: "PokemonDetailVC", sender: poke)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -127,7 +138,6 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
     }
     
     @IBAction func music(_ sender: UIButton) {
-        
         if musicPlayer.isPlaying {
             musicPlayer.pause()
             sender.alpha = 0.2
@@ -137,12 +147,17 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
         }
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         if searchBar.text == nil || searchBar.text == "" {
             // not to search anything
             inSearchMode = false
             collection.reloadData()
+            view.endEditing(true)
             
         } else {
             inSearchMode = true
@@ -156,7 +171,19 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
             
             collection.reloadData()
         }
-        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "PokemonDetailVC" {
+            if let detailsVC = segue.destination as? PokemonDetailVC {
+                if let poke = sender as? Pokemon {
+                    // recieve the data that has been sent by segue
+                    detailsVC.pokemon = poke
+                }
+            }
+        }
+    }
+    
 }
 
