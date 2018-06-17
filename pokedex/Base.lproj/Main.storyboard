@@ -152,13 +152,34 @@
                     <view key="view" contentMode="scaleToFill" id="cgk-9G-4pe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCo-S3-bOC">
+                                <rect key="frame" x="146" y="312" width="73" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="HsY-xb-Tme"/>
+                                    <constraint firstAttribute="height" constant="48" id="Yrc-Aa-zXx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zCo-S3-bOC" firstAttribute="leading" secondItem="ZFu-1U-B5i" secondAttribute="leading" constant="146" id="8sZ-bC-0B0"/>
+                            <constraint firstItem="ZFu-1U-B5i" firstAttribute="bottom" secondItem="zCo-S3-bOC" secondAttribute="bottom" constant="307" id="HbO-l0-2BB"/>
+                            <constraint firstItem="zCo-S3-bOC" firstAttribute="top" secondItem="ZFu-1U-B5i" secondAttribute="top" constant="292" id="NcU-o8-5fO"/>
+                            <constraint firstItem="ZFu-1U-B5i" firstAttribute="trailing" secondItem="zCo-S3-bOC" secondAttribute="trailing" constant="156" id="pBd-OB-qmw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZFu-1U-B5i"/>
                     </view>
+                    <connections>
+                        <outlet property="nameLbl" destination="zCo-S3-bOC" id="E4M-7e-GuX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xbb-2T-9u7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2314" y="-280"/>
+            <point key="canvasLocation" x="-2366" y="-280"/>
         </scene>
     </scenes>
     <resources>
