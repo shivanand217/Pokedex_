@@ -167,7 +167,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
             filteredPokemon = pokemon.filter({ $0.name.range(of: lower) != nil })
             /* for i in filteredPokemon {
                 print(i.name, terminator:" ")
-            } print()*/
+            } print() */
             
             collection.reloadData()
         }

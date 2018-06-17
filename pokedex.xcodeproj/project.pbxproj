@@ -21,6 +21,7 @@
 		186958DF20D5138600888C7A /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 186958DE20D5138600888C7A /* music.mp3 */; };
 		186958E120D513B000888C7A /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = 186958E020D513B000888C7A /* music.png */; };
 		186958E320D66B5400888C7A /* PokemonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186958E220D66B5400888C7A /* PokemonDetailVC.swift */; };
+		186958E520D6A8F800888C7A /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 186958E420D6A8F700888C7A /* back.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		186958DE20D5138600888C7A /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		186958E020D513B000888C7A /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
 		186958E220D66B5400888C7A /* PokemonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailVC.swift; sourceTree = "<group>"; };
+		186958E420D6A8F700888C7A /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				186958E020D513B000888C7A /* music.png */,
 				186958DE20D5138600888C7A /* music.mp3 */,
 				1803AF1520D4187B005017FE /* pokemon.csv */,
+				186958E420D6A8F700888C7A /* back.png */,
 				186958D720D50B3100888C7A /* Pokemon Hollow.ttf */,
 				186958D820D50B3200888C7A /* Pokemon Solid.ttf */,
 			);
@@ -191,6 +194,7 @@
 			files = (
 				1803AF0B20D40BA4005017FE /* LaunchScreen.storyboard in Resources */,
 				1803AF0820D40BA4005017FE /* Assets.xcassets in Resources */,
+				186958E520D6A8F800888C7A /* back.png in Resources */,
 				186958D920D50B3200888C7A /* Pokemon Hollow.ttf in Resources */,
 				186958DA20D50B3200888C7A /* Pokemon Solid.ttf in Resources */,
 				1803AF1620D4187B005017FE /* pokemon.csv in Resources */,
