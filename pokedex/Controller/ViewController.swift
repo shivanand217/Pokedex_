@@ -33,7 +33,7 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
         
         // invoke methods here
         parsePokemonCSV()
-        // initAudio()
+        //initAudio()
     }
     
     func initAudio() {
@@ -142,19 +142,21 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDeleg
         if searchBar.text == nil || searchBar.text == "" {
             // not to search anything
             inSearchMode = false
+            collection.reloadData()
+            
         } else {
             inSearchMode = true
             
             let lower = searchBar.text!.lowercased()
             // filter all the pokemons based on the search query
             filteredPokemon = pokemon.filter({ $0.name.range(of: lower) != nil })
-            for i in filteredPokemon {
+            /*for i in filteredPokemon {
                 print(i.name, terminator:" ")
-            }
-            print()
+            }print()*/
             
             collection.reloadData()
         }
+        
     }
 }
 
