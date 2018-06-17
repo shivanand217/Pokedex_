@@ -15,6 +15,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var searchBarAction: UISearchBar!
     
     var pokemon = [Pokemon]()
+    
     var musicPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
@@ -27,7 +28,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // invoke methods here
         parsePokemonCSV()
         initAudio()
-        
     }
     
     func initAudio() {
