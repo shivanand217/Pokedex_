@@ -11,8 +11,8 @@ class Pokemon {
     
     private var _name: String!
     private var _pokedexId: Int!
-    private var _description: String!
     private var _types: [String]!
+    private var _abilities: [String]!
     private var _defense: Int!
     private var _height: Int!
     private var _weight: Int!
@@ -43,7 +43,6 @@ class Pokemon {
         
         // request the api to get the data of the specific pokemon
         Alamofire.request(_pokemonURL, method: .get).responseJSON { (response) in
-            // print(response.result.value)
             
             if let dict = response.result.value as? Dictionary<String, AnyObject> {
                 
@@ -86,7 +85,7 @@ class Pokemon {
                 }
                 
                 if let type1 = dict["types"] as? [Dictionary<String, AnyObject>] {
-                    // Looping through all the types that this pokemon can take
+                    // get through all the types that this pokemon can take
                     for var i in (0..<type1.count) {
                         if let type2 = type1[i]["type"] as? [Dictionary<String, AnyObject>] {
                             if let t1 = type2[1]["name"] as? String {
@@ -96,6 +95,18 @@ class Pokemon {
                     }
                 }
                 
+                if let able = dict["abilities"] as? [Dictionary<String, AnyObject>] {
+                    // get through all the abilities
+                    for var i in (0..<able.count) {
+                        if let able1 = able[i]["ability"] as? [Dictionary<String, AnyObject>] {
+                            if let a1 = able1[1]["name"] as? String {
+                                self._abilities.append(a1)
+                            }
+                        }
+                    }
+                }
+                
+                print(self._weight,self._height,self._name,self._baseExperience)
             }
             
             /* dict = response.result.value as! Dictionary<String, AnyObject>; do {

@@ -4,7 +4,6 @@
 //
 //  Created by apple on 17/06/18.
 //  Copyright © 2018 shiv. All rights reserved.
-//
 
 import UIKit
 
@@ -14,7 +13,6 @@ class PokemonDetailVC: UIViewController {
     
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var mainImg: UIImageView!
-    @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var defenceLbl: UILabel!
     @IBOutlet weak var heightLbl: UILabel!
@@ -24,13 +22,15 @@ class PokemonDetailVC: UIViewController {
     @IBOutlet weak var nextEvoLbl: UILabel!
     @IBOutlet weak var currentEvoImg: UIImageView!
     @IBOutlet weak var nextEvoImg: UIImageView!
+    @IBOutlet weak var speed: UILabel!
+    @IBOutlet weak var baseExp: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pokemon.downloadPokemonDetail {
-            // this will be called only after the network call will be completed and we have the data
+            //  this will be called only after the network call will be completed and we have the data
             self.updateUI()
         }
     }
@@ -40,7 +40,8 @@ class PokemonDetailVC: UIViewController {
     }
     
     func updateUI() {
-        print("data found.")
+        
+        
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
