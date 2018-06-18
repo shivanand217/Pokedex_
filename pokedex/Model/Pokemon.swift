@@ -21,13 +21,14 @@ class Pokemon {
     private var _nextEvolutionTxt: String!
     
     
-    // setter nd getter
     var name: String {
         return _name
     }
+    
     var pokedexId: Int {
         return _pokedexId
     }
+    
     init(name: String, pokedexId: Int) {
         self._name = name
         self._pokedexId = pokedexId
