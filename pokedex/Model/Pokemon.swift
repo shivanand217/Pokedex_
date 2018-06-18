@@ -1,4 +1,3 @@
-//
 //  Pokemon.swift
 //  pokedex
 //
@@ -13,7 +12,7 @@ class Pokemon {
     private var _name: String!
     private var _pokedexId: Int!
     private var _description: String!
-    private var _type: String!
+    private var _types: [String]!
     private var _defense: Int!
     private var _height: Int!
     private var _weight: Int!
@@ -22,6 +21,9 @@ class Pokemon {
     private var _pokemonURL: String!
     private var _speed: Int!
     private var _baseExperience: Int!
+    private var _specialDefence: Int!
+    private var _specialAttack: Int!
+    private var _hp: Int!
     
     var name: String {
         return _name
@@ -41,7 +43,7 @@ class Pokemon {
         
         // request the api to get the data of the specific pokemon
         Alamofire.request(_pokemonURL, method: .get).responseJSON { (response) in
-            //print(response.result.value)
+            // print(response.result.value)
             
             if let dict = response.result.value as? Dictionary<String, AnyObject> {
                 
@@ -60,12 +62,40 @@ class Pokemon {
                 if let baseExp = dict["base_experience"] as? Int {
                     self._baseExperience = baseExp
                 }
-            }
-            
-            if let dict1 = response.result.value as? Dictionary<String, Dictionary<String, AnyObject> > {
-                if let slot = dict1["types"]!["slot"] {
-                    print(slot)
+                
+                // retrive power metrics
+                if let stat = dict["stats"] as? [Dictionary<String, AnyObject>] {
+                    if let speed = stat[0]["base_stat"] as? Int {
+                        self._speed = speed
+                    }
+                    if let specialDefense = stat[1]["base_stat"] as? Int {
+                        self._specialDefence = specialDefense
+                    }
+                    if let specialAttack = stat[2]["base_stat"] as? Int {
+                        self._specialAttack = specialAttack
+                    }
+                    if let defence = stat[3]["base_stat"] as? Int {
+                        self._defense = defence
+                    }
+                    if let attack = stat[4]["base_stat"] as? Int {
+                        self._attack = attack
+                    }
+                    if let hp = stat[5]["base_stat"] as? Int {
+                        self._hp = hp
+                    }
                 }
+                
+                if let type1 = dict["types"] as? [Dictionary<String, AnyObject>] {
+                    // Looping through all the types that this pokemon can take
+                    for var i in (0..<type1.count) {
+                        if let type2 = type1[i]["type"] as? [Dictionary<String, AnyObject>] {
+                            if let t1 = type2[1]["name"] as? String {
+                                self._types.append(t1)
+                            }
+                        }
+                    }
+                }
+                
             }
             
             /* dict = response.result.value as! Dictionary<String, AnyObject>; do {
