@@ -8,8 +8,8 @@
 
 import Foundation
 
-let URL_BASE = "http://pokeapi.co"
-let URL_POKEMON = "/api/v1/pokemon/"
+let URL_BASE = "http://pokeapi.co/api/v2/"
+let URL_POKEMON = "pokemon/"
 
 
 typealias DownloadCompleted = () -> ()
