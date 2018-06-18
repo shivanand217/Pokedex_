@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class Pokemon {
     
@@ -30,10 +31,16 @@ class Pokemon {
     }
     
     init(name: String, pokedexId: Int) {
-        
         self._name = name
         self._pokedexId = pokedexId
-        self._pokemonURL = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexId)"
+        self._pokemonURL = "\(URL_BASE)\(URL_POKEMON)\(self.pokedexId)/"
+    }
+    
+    func downloadPokemonDetail(completed: DownloadCompleted) {
+        // request the api to get the data of the specific pokemon
+        Alamofire.request(_pokemonURL, method: .get).responseJSON { (response) in
+            print(response.result.value)
+        }
     }
     
 }

@@ -9,8 +9,7 @@
 import UIKit
 import AVFoundation // music
 
-class ViewController: UIViewController, UICollectionViewDelegate,
-UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class ViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBarAction: UISearchBar!

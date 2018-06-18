@@ -28,10 +28,19 @@ class PokemonDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pokemon.downloadPokemonDetail {
+            // this will be called only after the network call will be completed and we have the data
+            self.updateUI()
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    func updateUI() {
+        print("data found.")
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
