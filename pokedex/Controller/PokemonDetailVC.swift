@@ -9,7 +9,7 @@ import UIKit
 
 class PokemonDetailVC: UIViewController {
 
-    var pokemon: Pokemon! = nil
+    var pokemon: Pokemon!
     
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var mainImg: UIImageView!
