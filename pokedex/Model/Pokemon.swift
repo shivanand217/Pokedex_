@@ -24,7 +24,7 @@ class Pokemon {
     private var _specialAttack: String!
     private var _pokemonURL: String!
     
-    // some data protections
+    // some data protections its good practice
     
     var speed: String {
         if _speed == nil {
@@ -168,7 +168,7 @@ class Pokemon {
                     }
                 }
                 
-                print(self._weight,self._height,self._name,self._baseExperience,self._attack,self._defense,self._speed)
+                /**print(self._weight,self._height,self._name,self._baseExperience,self._attack,self._defense,self._speed)
                 for var i in (0..<self._types.count) {
                     print(self._types[i],terminator:" ")
                 }
@@ -176,7 +176,7 @@ class Pokemon {
                 
                 for var i in (0..<self._abilities.count) {
                     print(self._abilities[i],terminator:" ");
-                }
+                }**/
                 
             }
             // this tells that network call is completed now we can update our UI
