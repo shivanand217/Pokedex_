@@ -2,14 +2,14 @@
 //  ViewController.swift
 //  pokedex
 //
-//  Created by apple on 15/06/18.
+//  Created by shiv on 15/06/18.
 //  Copyright © 2018 shiv. All rights reserved.
 //
 
 import UIKit
 import AVFoundation // music
 
-class ViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBarAction: UISearchBar!

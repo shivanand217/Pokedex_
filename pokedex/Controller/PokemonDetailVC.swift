@@ -2,7 +2,7 @@
 //  PokemonDetailVC.swift
 //  pokedex
 //
-//  Created by apple on 17/06/18.
+//  Created by shiv on 17/06/18.
 //  Copyright © 2018 shiv. All rights reserved.
 
 import UIKit
@@ -44,6 +44,7 @@ class PokemonDetailVC: UIViewController {
     }
     
     func updateUI() {
+        
         attackLbl.text = pokemon.attack
         weightLbl.text = pokemon.weight
         baseExp.text = pokemon.defense

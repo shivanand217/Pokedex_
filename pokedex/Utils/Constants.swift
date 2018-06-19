@@ -2,7 +2,7 @@
 //  Constants.swift
 //  pokedex
 //
-//  Created by apple on 18/06/18.
+//  Created by shiv on 18/06/18.
 //  Copyright © 2018 shiv. All rights reserved.
 //
 

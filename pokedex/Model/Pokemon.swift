@@ -1,7 +1,7 @@
 //  Pokemon.swift
 //  pokedex
 //
-//  Created by apple on 15/06/18.
+//  Created by shiv on 15/06/18.
 //  Copyright © 2018 shiv. All rights reserved.
 
 import Foundation
@@ -23,8 +23,12 @@ class Pokemon {
     private var _specialDefence: String!
     private var _specialAttack: String!
     private var _pokemonURL: String!
+    private var _nextEvolutionName: String!
+    private var _description: String!
+    private var _nextEvolutionId: String!
+    private var _nextEvolutionLevel: String!
     
-    // some data protections its good practice
+    // Some data protections : it's a good practice
     
     var abilities: [String] {
         if _abilities.count == 0 {
@@ -181,6 +185,57 @@ class Pokemon {
                         }
                     }
                 }
+                
+                if let descArr = dict["descriptions"] as? [Dictionary<String, String>] , descArr.count > 0 {
+                    
+                    if let url = descArr[0]["resource_uri"] {
+                        
+                        let descURL = "\(URL_BASE)\(url)"
+                        
+                        Alamofire.request(descURL).responseJSON(completionHandler: { (response) in
+                            
+                            if let descDict = response.result.value as? Dictionary<String, AnyObject> {
+                                
+                                if let description = descDict["description"] as? String {
+                                    
+                                    let newDescription = description.replacingOccurrences(of: "POKMON", with: "Pokemon")
+                                    
+                                    self._description = newDescription
+                                    //print(newDescription)
+                                }
+                            }
+                            
+                            completed()
+                        })
+                    }
+                } else {
+                    
+                    self._description = ""
+                }
+                
+                if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>] , evolutions.count > 0 {
+                    
+                    if let nextEvo = evolutions[0]["to"] as? String {
+                        if nextEvo.range(of: "mega") == nil {
+                            self._nextEvolutionName = nextEvo
+                            if let uri = evolutions[0]["resource_uri"] as? String {
+                                let newStr = uri.replacingOccurrences(of: "/api/v1/pokemon/", with: "")
+                                let nextEvoId = newStr.replacingOccurrences(of: "/", with: "")
+                                
+                                self._nextEvolutionId = nextEvoId
+                                
+                                if let lvlExist = evolutions[0]["level"] {
+                                    if let lvl = lvlExist as? Int {
+                                        self._nextEvolutionLevel = "\(lvl)"
+                                    }
+                                } else {
+                                    self._nextEvolutionLevel = ""
+                                }
+                            }
+                        }
+                    }
+                }
+                
                 
                 /**
                 print(self._weight,self._height,self._name,self._baseExperience,self._attack,self._defense,self._speed)
