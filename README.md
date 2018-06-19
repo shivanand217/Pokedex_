@@ -1,6 +1,8 @@
 # pokedex
 awesome pokedex :heart_eyes:
 
+## NOTE: UI's are very bad, Please bare with me :pensive:
+
 ## Screen
 
 poke1             |  poke2
