@@ -1,7 +1,7 @@
 # pokedex
-awesome pokedex :heart_eyes:
+Awesome POKEDEX :heart_eyes:
 
-## NOTE: UI's are very bad, Please bare with me :pensive:
+## NOTE: UI's are not so good but functionalities are, Please bare with me :pensive:
 
 ## Screen
 
