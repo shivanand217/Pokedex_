@@ -103,7 +103,7 @@ class Pokemon {
         self._pokemonURL = "\(URL_BASE)\(URL_POKEMON)\(pokedexId)/"
     }
     
-    func downloadPokemonDetail(completed: DownloadCompleted) {
+    func downloadPokemonDetail(completed: @escaping DownloadCompleted) {
         
         // request the API to get the data of the specific pokemon
         Alamofire.request(_pokemonURL, method: .get).responseJSON { (response) in
@@ -179,6 +179,8 @@ class Pokemon {
                 }
                 
             }
+            // this tells that network call is completed now we can update our UI
+            completed()
         }
     }
     

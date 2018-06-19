@@ -33,6 +33,7 @@ class PokemonDetailVC: UIViewController {
             //  this will be called only after the network call will be completed and we have the data
             self.updateUI()
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,7 +42,7 @@ class PokemonDetailVC: UIViewController {
     
     func updateUI() {
         
-        
+        print("nothing!!!..")
     }
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
