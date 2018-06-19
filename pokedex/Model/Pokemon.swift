@@ -3,7 +3,7 @@
 //
 //  Created by apple on 15/06/18.
 //  Copyright © 2018 shiv. All rights reserved.
-//
+
 import Foundation
 import Alamofire
 
@@ -25,6 +25,20 @@ class Pokemon {
     private var _pokemonURL: String!
     
     // some data protections its good practice
+    
+    var abilities: [String] {
+        if _abilities.count == 0 {
+            _abilities.append("NA")
+        }
+        return _abilities
+    }
+    
+    var types: [String] {
+        if _types.count == 0 {
+            _types.append("NA")
+        }
+        return _types
+    }
     
     var speed: String {
         if _speed == nil {
@@ -105,7 +119,7 @@ class Pokemon {
     
     func downloadPokemonDetail(completed: @escaping DownloadCompleted) {
         
-        // request the API to get the data of the specific pokemon
+        // Request the API to get the data of the specific pokemon
         Alamofire.request(_pokemonURL, method: .get).responseJSON { (response) in
             
             if let dict = response.result.value as? Dictionary<String, AnyObject> {
@@ -168,17 +182,19 @@ class Pokemon {
                     }
                 }
                 
-                /**print(self._weight,self._height,self._name,self._baseExperience,self._attack,self._defense,self._speed)
+                /**
+                print(self._weight,self._height,self._name,self._baseExperience,self._attack,self._defense,self._speed)
                 for var i in (0..<self._types.count) {
                     print(self._types[i],terminator:" ")
                 }
                 print()
-                
                 for var i in (0..<self._abilities.count) {
                     print(self._abilities[i],terminator:" ");
-                }**/
+                }
+                **/
                 
             }
+            
             // this tells that network call is completed now we can update our UI
             completed()
         }
