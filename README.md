@@ -1,7 +1,7 @@
 # pokedex
 Awesome POKEDEX :heart_eyes:
 
-## NOTE: UI's are not so good but functionalities are, Please bare with me :pensive:
+## NOTE: UI's are not so good but functionalities are, Please bear with me :pensive:
 
 ## Screen
 
