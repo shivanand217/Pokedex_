@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import AVFoundation // music
+import AVFoundation
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchBarAction: UISearchBar!
+    @IBOutlet weak var musicBtn: UIButton!
     
     var pokemon = [Pokemon]()
     // filtered array for the search
@@ -28,11 +29,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collection.dataSource = self
         collection.delegate = self
         searchBarAction.delegate = self
-       
+        musicBtn.isHidden = true
         
         // invoke methods here
         parsePokemonCSV()
-        //initAudio()
+        initAudio()
     }
     
     func initAudio() {
@@ -147,7 +148,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        view.endEditing(true)
+        self.view.endEditing(true)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
