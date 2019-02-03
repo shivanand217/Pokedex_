@@ -1,0 +1,6 @@
+[submodule "Pokedex_/Quick"]
+	path = Pokedex_/Quick
+	url = git@github.com:Quick/Quick.git
+[submodule "Pokedex_/Nimble"]
+	path = Pokedex_/Nimble
+	url = git@github.com:Quick/Nimble.git

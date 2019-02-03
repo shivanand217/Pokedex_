@@ -8,5 +8,7 @@ target 'pokedex' do
     pod 'SwiftyJSON'
     pod 'Alamofire'
     pod 'SVProgressHUD'
-
+    pod 'Quick'
+    pod 'Nimble'
+    
 end
